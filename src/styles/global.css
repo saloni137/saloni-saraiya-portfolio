@@ -139,7 +139,7 @@ button {
   border-top: 1px solid var(--line);
   padding-top: 1.25rem;
 }
-.section-label > :last-child {
+.section-label > :nth-child(2) {
   display: none;
 }
 .eyebrow {
@@ -1729,7 +1729,7 @@ a:hover .arrow {
     width: 0.9rem;
     height: 0.9rem;
   }
-  .section-label > :last-child {
+  .section-label > :nth-child(2) {
     display: block;
   }
   .hero h1 {
