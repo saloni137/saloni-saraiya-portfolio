@@ -606,7 +606,6 @@ a:hover .arrow {
   background: var(--paper-deep);
   overflow: clip;
   border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
 }
 .work-stage {
   padding-top: 3rem;
