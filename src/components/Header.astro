@@ -1,5 +1,6 @@
 ---
 import Arrow from './Arrow.astro';
+import { profile } from '../data/profile';
 const isHome = Astro.url.pathname === '/';
 ---
 
@@ -17,7 +18,7 @@ const isHome = Astro.url.pathname === '/';
       Résumé <Arrow diagonal />
     </a>
   </nav>
-  <a class="header-contact" href={isHome ? '#contact' : '/#contact'}>
+  <a class="header-contact" href={profile.calendly} target="_blank" rel="noopener noreferrer">
     Let’s talk <span aria-hidden="true">↗</span>
   </a>
 </header>

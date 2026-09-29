@@ -17,6 +17,9 @@ import { profile } from '../data/profile';
     <Arrow diagonal />
   </a>
   <div class="footer-contact">
+    <a class="text-link" href={profile.calendly} target="_blank" rel="noopener noreferrer">
+      Book a 30-minute call <Arrow diagonal />
+    </a>
     <a href={`mailto:${profile.email}`}>{profile.email}</a>
     <button class="copy-email" data-email={profile.email} aria-label="Copy email address">
       Copy email <span aria-hidden="true">⧉</span>

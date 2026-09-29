@@ -3,6 +3,7 @@ export const profile = {
   title: 'Full-stack & AI engineer',
   location: 'Ottawa, Canada',
   email: 'salonisaraiya1320@gmail.com',
+  calendly: 'https://calendly.com/salonisaraiya1320/30min',
   github: 'https://github.com/saloni137',
   linkedin: 'https://www.linkedin.com/in/saloni-saraiya',
   description:
