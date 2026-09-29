@@ -5,7 +5,7 @@ const site =
   process.env.SITE_URL ||
   (process.env.VERCEL_PROJECT_PRODUCTION_URL
     ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-    : undefined);
+    : 'https://saloni-saraiya-portfolio.vercel.app');
 
 export default defineConfig({
   site,
