@@ -603,13 +603,16 @@ a:hover .arrow {
   color: var(--muted);
 }
 .work-section {
-  background: var(--paper-deep);
+  background: var(--paper);
   overflow: clip;
   border-top: 1px solid var(--line);
 }
 .work-stage {
   padding-top: 3rem;
   padding-bottom: 3rem;
+}
+.work-section:not(.is-horizontal) .work-stage {
+  padding-bottom: 0;
 }
 .work-heading {
   display: flex;
@@ -1114,8 +1117,13 @@ a:hover .arrow {
   padding: 1.25rem 0;
 }
 .practice {
-  padding-top: 6rem;
-  padding-bottom: 5rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+.practice > .section-label,
+.about-section > .section-label {
+  border-top: 0;
+  padding-top: 0;
 }
 .practice-heading {
   display: grid;
@@ -1177,7 +1185,7 @@ a:hover .arrow {
   font-weight: 500;
 }
 .about-section {
-  padding-top: 1rem;
+  padding-top: 0;
   padding-bottom: 5rem;
 }
 .about-grid {
@@ -2252,7 +2260,8 @@ a:hover .arrow {
     justify-content: center;
   }
   .practice {
-    padding-block: 8rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
   }
   .practice-heading {
     margin: 2rem 0 4rem;
