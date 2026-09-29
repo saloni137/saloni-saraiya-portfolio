@@ -2,12 +2,10 @@
   <rect width="1200" height="630" fill="#171717"/>
   <path d="M70 105h1060M70 540h1060" stroke="#4d4d4d"/>
   <text x="70" y="77" font-size="26" font-family="Arial,sans-serif" fill="#ebebeb">saloni ✳</text>
-  <text x="1130" y="74" text-anchor="end" font-size="17" letter-spacing="2" font-family="monospace" fill="#b0b0b0">SELECTED WORK</text>
   <text x="70" y="255" font-size="110" font-weight="700" font-family="Arial,sans-serif" fill="#ebebeb">Saloni</text>
   <text x="70" y="390" font-size="125" font-family="Georgia,serif" font-style="italic" fill="#ffc17a">Saraiya.</text>
   <text x="74" y="470" font-size="32" font-family="Arial,sans-serif" fill="#ebebeb">Full-stack &amp; AI Engineer</text>
   <circle cx="1020" cy="315" r="95" fill="none" stroke="#4d4d4d" stroke-width="2"/>
   <path d="M977 358l86-86m-86 0h86v86" stroke="#ebebeb" stroke-width="5" fill="none"/>
   <text x="70" y="584" font-size="18" font-family="monospace" fill="#b0b0b0">OTTAWA, CANADA</text>
-  <text x="1130" y="584" text-anchor="end" font-size="17" font-family="monospace" fill="#b0b0b0">saloni-saraiya-portfolio.vercel.app</text>
 </svg>
