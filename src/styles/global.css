@@ -3,8 +3,8 @@
   color-scheme: dark;
   --paper: #171717;
   --paper-deep: #141414;
-  --ink: #eeedec;
-  --muted: rgba(238, 237, 236, 0.72);
+  --ink: #ebebeb;
+  --muted: rgba(235, 235, 235, 0.72);
   --line: #333333;
   --outline: #4d4d4d;
   --surface: #212121;
@@ -13,13 +13,11 @@
   --accent-hover: #ffb938;
   --on-accent: #171717;
   --white: #ffffff;
-  --teal: #143835;
-  --sage: #173522;
-  --peach: #462a1b;
-  --blue: #1c2d54;
-  --green: #93fbb7;
-  --teal-highlight: #81f8e1;
-  --soft-ink: rgba(238, 237, 236, 0.05);
+  --slate: #292929;
+  --graphite: #212121;
+  --stone: #333333;
+  --smoke: #1a1a1a;
+  --soft-ink: rgba(235, 235, 235, 0.05);
   --shadow: rgba(0, 0, 0, 0.4);
   --mono: 'IBM Plex Mono', monospace;
   --serif: 'Newsreader Variable', Georgia, serif;
@@ -69,7 +67,7 @@ button {
 a:focus-visible,
 button:focus-visible,
 summary:focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--ink);
   outline-offset: 6px;
 }
 ::selection {
@@ -173,7 +171,7 @@ button {
   left: 0;
   right: 0;
   height: 3px;
-  background: var(--accent);
+  background: var(--ink);
   transform: scaleX(0);
   transform-origin: left;
   z-index: 40;
@@ -274,7 +272,7 @@ a:hover .arrow {
 .status-dot {
   width: 0.4rem;
   height: 0.4rem;
-  background: var(--accent);
+  background: var(--ink);
   border-radius: 50%;
   flex-shrink: 0;
 }
@@ -323,7 +321,7 @@ a:hover .arrow {
   display: none;
   width: 2px;
   height: 1em;
-  background: var(--accent);
+  background: var(--ink);
   margin-left: 0.25rem;
 }
 .is-typing .typing-caret {
@@ -434,7 +432,7 @@ a:hover .arrow {
   left: 20%;
   top: 2rem;
   transform: rotate(9deg);
-  background: var(--blue);
+  background: var(--smoke);
   color: var(--ink);
   z-index: 1;
 }
@@ -442,7 +440,7 @@ a:hover .arrow {
   left: 13%;
   top: 3.5rem;
   transform: rotate(-5deg);
-  background: var(--teal);
+  background: var(--slate);
   z-index: 2;
 }
 .sheet-experience {
@@ -531,8 +529,9 @@ a:hover .arrow {
   z-index: 5;
   right: 0;
   bottom: 1rem;
-  background: var(--accent);
-  color: var(--on-accent);
+  background: var(--surface-raised);
+  color: var(--ink);
+  border: 1px solid var(--outline);
   border-radius: 50%;
   width: 6.5rem;
   height: 6.5rem;
@@ -551,6 +550,7 @@ a:hover .arrow {
   font-size: 2.2rem;
   font-weight: 400;
   line-height: 1.25;
+  color: var(--accent);
 }
 .hero-footer {
   border-top: 1px solid var(--line);
@@ -669,21 +669,21 @@ a:hover .arrow {
   color: var(--panel-ink, var(--ink));
   min-width: 0;
 }
-.theme-teal {
-  --panel: var(--teal);
+.theme-slate {
+  --panel: var(--slate);
 }
 .theme-ink {
   --panel: var(--surface);
   --panel-ink: var(--ink);
 }
-.theme-sage {
-  --panel: var(--sage);
+.theme-graphite {
+  --panel: var(--graphite);
 }
-.theme-peach {
-  --panel: var(--peach);
+.theme-stone {
+  --panel: var(--stone);
 }
-.theme-blue {
-  --panel: var(--blue);
+.theme-smoke {
+  --panel: var(--smoke);
 }
 .project-copy {
   padding: 1.5rem;
@@ -794,7 +794,7 @@ a:hover .arrow {
 }
 .core-star {
   font-size: 2.3rem;
-  color: var(--teal-highlight);
+  color: var(--ink);
 }
 .agent-core small {
   font-family: var(--mono);
@@ -827,7 +827,7 @@ a:hover .arrow {
   height: 0.3rem;
   width: 0.3rem;
   border-radius: 50%;
-  background: var(--green);
+  background: var(--ink);
 }
 .agent-log b {
   margin-left: auto;
@@ -856,7 +856,7 @@ a:hover .arrow {
   font-size: 4.5rem;
   letter-spacing: -0.08em;
   font-weight: 500;
-  color: var(--green);
+  color: var(--ink);
 }
 .perf-number em {
   font-size: 1.4rem;
@@ -892,7 +892,7 @@ a:hover .arrow {
   width: 100%;
 }
 .bar-after {
-  background: var(--green);
+  background: var(--ink);
   width: 1%;
   min-width: 2px;
 }
@@ -1000,7 +1000,7 @@ a:hover .arrow {
 }
 .ledger i {
   font-style: normal;
-  color: var(--green);
+  color: var(--ink);
   margin-left: 0.3rem;
 }
 .ledger .ledger-header {
@@ -1030,15 +1030,15 @@ a:hover .arrow {
   position: absolute;
   bottom: 0.5rem;
   right: 0;
-  border: 2px solid var(--accent);
+  border: 2px solid var(--outline);
   color: var(--accent);
   transform: rotate(12deg);
   padding: 0.5rem 0.75rem;
   font-family: var(--mono);
   font-size: 0.55rem;
   line-height: 1.4;
-  background: var(--peach);
-  box-shadow: 0 0 0 0.25rem var(--peach);
+  background: var(--stone);
+  box-shadow: 0 0 0 0.25rem var(--stone);
 }
 .ledger-stamp strong {
   font-size: 1rem;
@@ -1096,7 +1096,7 @@ a:hover .arrow {
 }
 .code-content b {
   font-weight: 400;
-  color: var(--green);
+  color: var(--ink);
 }
 .code-caret {
   display: inline-block;
@@ -1192,7 +1192,7 @@ a:hover .arrow {
   max-width: 28rem;
   width: 100%;
   margin: auto;
-  background: var(--peach);
+  background: var(--stone);
   border-radius: 50% 50% 1rem 1rem;
   display: flex;
   align-items: center;
@@ -1228,7 +1228,7 @@ a:hover .arrow {
   bottom: 4rem;
   left: 0;
   width: 100%;
-  stroke: var(--accent);
+  stroke: var(--muted);
   stroke-width: 1.5;
   transform: rotate(-10deg);
 }
@@ -1304,7 +1304,7 @@ a:hover .arrow {
   position: relative;
 }
 .easygen-link {
-  background: var(--teal);
+  background: var(--slate);
 }
 .confidential-project {
   background: var(--paper-deep);
@@ -1423,11 +1423,11 @@ a:hover .arrow {
   content: '';
   width: 0.35rem;
   height: 0.35rem;
-  background: var(--green);
+  background: var(--ink);
   border-radius: 50%;
 }
 .motion-toggle[aria-pressed='true']::before {
-  background: var(--accent);
+  background: var(--ink);
 }
 .toast {
   position: fixed;
@@ -1554,7 +1554,7 @@ a:hover .arrow {
   margin: 3rem 0;
   padding: 2rem;
   background: var(--paper-deep);
-  border-left: 2px solid var(--accent);
+  border-left: 2px solid var(--outline);
 }
 .case-takeaway p {
   font-family: var(--serif);

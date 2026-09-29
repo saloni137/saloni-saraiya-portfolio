@@ -25,7 +25,7 @@ export const projects: Project[] = [
     company: 'Notch',
     category: 'AI product engineering',
     period: '2026',
-    theme: 'teal',
+    theme: 'slate',
     visual: 'agents',
     description:
       'Taking a creative agent beyond its own chat window, with useful progress, the right context and a reliable way back.',
@@ -125,7 +125,7 @@ export const projects: Project[] = [
     company: 'Notch',
     category: 'Knowledge & agent systems',
     period: '2026',
-    theme: 'sage',
+    theme: 'graphite',
     visual: 'memory',
     description:
       'Turning uploaded documents and scattered brand facts into knowledge people can understand, inspect and control.',
@@ -174,7 +174,7 @@ export const projects: Project[] = [
     company: 'Notch',
     category: 'Backend & product systems',
     period: '2026',
-    theme: 'peach',
+    theme: 'stone',
     visual: 'billing',
     description:
       'Keeping subscriptions, purchased credits and agent access consistent through retries and changing plans.',
@@ -224,7 +224,7 @@ export const projects: Project[] = [
     company: 'DhiWise · WiseGPT',
     category: 'Developer tools & retrieval',
     period: '2023–2025',
-    theme: 'blue',
+    theme: 'smoke',
     visual: 'retrieval',
     description:
       'A VS Code assistant grounded in a developer’s project, supported by retrieval and embedding pipelines.',

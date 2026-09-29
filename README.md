@@ -1,6 +1,6 @@
 # Saloni Saraiya — Portfolio
 
-A personal portfolio about the craft of building full-stack and AI products. Designed as a dark systems notebook: charcoal surfaces, warm amber accents, editorial typography, original diagrams and a scroll-driven gallery.
+A personal portfolio about the craft of building full-stack and AI products. Designed as a dark systems notebook: black, white and gray surfaces, orange typography, editorial typography, original diagrams and a scroll-driven gallery.
 
 Built with **Astro, TypeScript, GSAP and plain CSS**. All pages are generated as static HTML. No database, API keys or runtime server is required.
 
