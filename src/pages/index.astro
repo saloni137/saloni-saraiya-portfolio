@@ -3,33 +3,53 @@ import Layout from '../layouts/Layout.astro';
 import Arrow from '../components/Arrow.astro';
 import Diagram from '../components/Diagram.astro';
 import { projects } from '../data/projects';
-import { experience, skills } from '../data/profile';
+import { profile, experience, skills } from '../data/profile';
 ---
 
 <Layout home>
   <section class="hero wrap" aria-labelledby="hero-title">
     <div class="hero-eyebrow">
       <span class="status-dot"></span>
-      <span>SALONI SARAIYA · FULL-STACK & AI ENGINEER</span>
+      <span>HELLO, I’M</span>
     </div>
     <div class="hero-main">
       <div class="hero-copy">
         <h1 id="hero-title">
-          <span class="hero-line">I build the</span>
+          <span class="hero-line">Saloni</span>
           <span class="hero-line">
-            whole <em>thing.</em>
+            <em>Saraiya.</em>
           </span>
         </h1>
-        <p>
-          From the first interaction to the system behind it.
-          <br class="desktop-break" /> I turn complex problems into products people can use.
-        </p>
-        <a class="text-link hero-cta" href="#work">
-          Explore selected work{' '}
-          <span class="round-arrow">
-            <Arrow />
+        <p class="hero-role">
+          <span class="sr-only">Full-stack engineer, AI engineer and founding engineer.</span>
+          <span class="typewriter" aria-hidden="true">
+            <span id="typed-role">Full-stack & AI Engineer</span>
+            <span class="typing-caret"></span>
           </span>
-        </a>
+        </p>
+        <div class="hero-details">
+          <span>
+            Founding Engineer at <strong>Notch</strong>
+          </span>
+          <span>
+            Ottawa, Canada <i aria-hidden="true">·</i> Building since 2020
+          </span>
+        </div>
+        <p>
+          I build the whole thing: thoughtful interfaces, applied AI, and the reliable systems
+          behind them.
+        </p>
+        <div class="hero-actions">
+          <a class="text-link hero-cta" href="#work">
+            Explore selected work{' '}
+            <span class="round-arrow">
+              <Arrow />
+            </span>
+          </a>
+          <a class="hero-booking" href={profile.calendly} target="_blank" rel="noopener noreferrer">
+            Book a call <Arrow diagonal />
+          </a>
+        </div>
       </div>
       <div
         class="hero-art"
@@ -80,7 +100,7 @@ import { experience, skills } from '../data/profile';
       </div>
     </div>
     <div class="hero-footer">
-      <span>Based in Ottawa. Building since 2020.</span>
+      <span>From idea to interface to infrastructure.</span>
       <span class="scroll-cue">
         SCROLL TO CONNECT THE DOTS <span>↓</span>
       </span>

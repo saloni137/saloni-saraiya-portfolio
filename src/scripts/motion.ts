@@ -14,10 +14,63 @@ try {
 }
 let media: gsap.MatchMedia | undefined;
 let galleryCleanup: (() => void) | undefined;
+let typingCleanup: (() => void) | undefined;
 let firstRun = true;
+
+function startRoleTyping(delay: number) {
+  const text = document.getElementById('typed-role');
+  const hero = document.querySelector('.hero');
+  if (!text || !hero) return;
+  const roles = ['Full-stack Engineer', 'AI Engineer', 'Founding Engineer'];
+  let role = 0;
+  let count = 0;
+  let deleting = false;
+  let visible = false;
+  let timer: ReturnType<typeof setTimeout>;
+  let started = false;
+  text.textContent = '';
+  text.parentElement?.classList.add('is-typing');
+
+  function tick() {
+    if (!visible || document.hidden || !text) return;
+    count += deleting ? -1 : 1;
+    text.textContent = roles[role].slice(0, count);
+    let wait = deleting ? 36 : 70;
+    if (count === roles[role].length) {
+      deleting = true;
+      wait = 1800;
+    } else if (count === 0) {
+      deleting = false;
+      role = (role + 1) % roles.length;
+      wait = 300;
+    }
+    timer = setTimeout(tick, wait);
+  }
+  const resume = () => {
+    clearTimeout(timer);
+    if (visible && !document.hidden) {
+      timer = setTimeout(tick, started ? 150 : delay);
+      started = true;
+    }
+  };
+  const observer = new IntersectionObserver(([entry]) => {
+    visible = entry.isIntersecting;
+    resume();
+  });
+  observer.observe(hero);
+  document.addEventListener('visibilitychange', resume);
+  return () => {
+    clearTimeout(timer);
+    observer.disconnect();
+    document.removeEventListener('visibilitychange', resume);
+    text.textContent = 'Full-stack & AI Engineer';
+    text.parentElement?.classList.remove('is-typing');
+  };
+}
 
 function configureMotion() {
   galleryCleanup?.();
+  typingCleanup?.();
   media?.revert();
   const reduced = override ?? preference.matches;
   root.classList.toggle('reduce-motion', reduced);
@@ -27,17 +80,17 @@ function configureMotion() {
     firstRun = false;
     return;
   }
+  typingCleanup = startRoleTyping(firstRun ? 1400 : 150);
 
   media = gsap.matchMedia();
   media.add('all', () => {
     if (firstRun) {
       gsap.from('.hero-line', {
-        yPercent: 25,
-        opacity: 0,
-        duration: 1.05,
-        stagger: 0.14,
-        ease: 'power3.out',
-        clearProps: 'opacity,transform',
+        clipPath: 'inset(0 100% 0 0)',
+        duration: 0.65,
+        stagger: 0.55,
+        ease: 'steps(7)',
+        clearProps: 'clipPath',
       });
       gsap.from('.hero-art', {
         y: 35,

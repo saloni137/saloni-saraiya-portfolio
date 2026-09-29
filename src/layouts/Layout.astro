@@ -27,7 +27,8 @@ const socialImage = Astro.site ? new URL('/social.png', Astro.site) : undefined;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#f8f7f7" />
+    <meta name="theme-color" content="#171717" />
+    <meta name="color-scheme" content="dark" />
     <title>{title}</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     {canonical && <link rel="canonical" href={canonical} />}
@@ -38,7 +39,7 @@ const socialImage = Astro.site ? new URL('/social.png', Astro.site) : undefined;
     {socialImage && <meta property="og:image" content={socialImage} />}
     <meta
       property="og:image:alt"
-      content="Saloni Saraiya — I build the whole thing. Full-stack and AI engineer."
+      content="Saloni Saraiya — Full-stack and AI engineer in Ottawa, Canada."
     />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />

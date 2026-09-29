@@ -1,6 +1,6 @@
 # Saloni Saraiya — Portfolio
 
-A personal portfolio about the craft of building full-stack and AI products. Designed as a systems notebook: paper textures, editorial typography, original diagrams and a scroll-driven gallery.
+A personal portfolio about the craft of building full-stack and AI products. Designed as a dark systems notebook: charcoal surfaces, warm amber accents, editorial typography, original diagrams and a scroll-driven gallery.
 
 Built with **Astro, TypeScript, GSAP and plain CSS**. All pages are generated as static HTML. No database, API keys or runtime server is required.
 
@@ -51,11 +51,12 @@ The résumé has a **Print / Save PDF** control. The downloadable document is ge
 ## Motion and accessibility
 
 - A pinned horizontal work gallery on spacious desktop screens; a vertical gallery on mobile and with reduced motion.
-- Scroll-linked hero layers, text emphasis and restrained section reveals.
+- A name-first hero with a typewriter role line, scroll-linked layers, text emphasis and restrained section reveals.
 - System motion preferences plus an explicit **Reduce motion** control in the footer.
 - Semantic navigation, a skip link, visible keyboard focus and keyboard access to every gallery card.
 - Content remains available when JavaScript is disabled.
 - Self-hosted fonts and no analytics or tracking scripts.
+- A consistent dark screen theme, with a separate light palette for the printed résumé.
 
 ## Content boundaries
 

@@ -1,20 +1,26 @@
 /* The palette is mapped to named semantic tokens so the visual system stays consistent. */
 :root {
-  --paper: #f8f7f7;
-  --paper-deep: #eeedec;
-  --ink: #212121;
-  --muted: #656363;
-  --line: #d9d9d9;
-  --accent: #d54123;
-  --accent-hover: #b8381e;
-  --white: #fff;
-  --lilac: #f3e8ff;
-  --sage: #dcfce7;
-  --peach: #ffedd5;
-  --blue: #dbeafe;
-  --green: #008547;
-  --soft-ink: rgba(33, 33, 33, 0.05);
-  --shadow: rgba(33, 33, 33, 0.1);
+  color-scheme: dark;
+  --paper: #171717;
+  --paper-deep: #141414;
+  --ink: #eeedec;
+  --muted: rgba(238, 237, 236, 0.72);
+  --line: #333333;
+  --outline: #4d4d4d;
+  --surface: #212121;
+  --surface-raised: #292929;
+  --accent: #ffc17a;
+  --accent-hover: #ffb938;
+  --on-accent: #171717;
+  --white: #ffffff;
+  --teal: #143835;
+  --sage: #173522;
+  --peach: #462a1b;
+  --blue: #1c2d54;
+  --green: #93fbb7;
+  --teal-highlight: #81f8e1;
+  --soft-ink: rgba(238, 237, 236, 0.05);
+  --shadow: rgba(0, 0, 0, 0.4);
   --mono: 'IBM Plex Mono', monospace;
   --serif: 'Newsreader Variable', Georgia, serif;
   --gutter: 1.5rem;
@@ -246,7 +252,7 @@ a:hover .arrow {
 .header-contact {
   display: none;
   font-size: 0.8rem;
-  border: 1px solid var(--ink);
+  border: 1px solid var(--outline);
   border-radius: 4rem;
   padding: 0.65rem 1.25rem;
   transition:
@@ -284,6 +290,10 @@ a:hover .arrow {
 }
 .hero-line {
   display: block;
+  width: max-content;
+  max-width: 100%;
+  padding-block: 0.08em;
+  margin-block: -0.08em;
 }
 .hero h1 em {
   color: var(--accent);
@@ -295,6 +305,86 @@ a:hover .arrow {
   max-width: 26rem;
   color: var(--muted);
 }
+.hero-copy .hero-role {
+  margin-top: 1.5rem;
+  min-height: 1.5em;
+  color: var(--ink);
+  font-size: clamp(1rem, 1.8vw, 1.5rem);
+  letter-spacing: -0.025em;
+  line-height: 1.5;
+}
+.typewriter {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.5em;
+  white-space: nowrap;
+}
+.typing-caret {
+  display: none;
+  width: 2px;
+  height: 1em;
+  background: var(--accent);
+  margin-left: 0.25rem;
+}
+.is-typing .typing-caret {
+  display: inline-block;
+  animation: caret-blink 1s step-end infinite;
+}
+@keyframes caret-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+.hero-details {
+  display: grid;
+  gap: 0.35rem;
+  margin-top: 1rem;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+.hero-details strong {
+  font-weight: 500;
+  color: var(--ink);
+}
+.hero-details i {
+  font-style: normal;
+  margin-inline: 0.35rem;
+}
+.hero-copy .hero-details + p {
+  margin-top: 1.1rem;
+}
+.hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  margin-top: 1.5rem;
+}
+.hero-actions .hero-cta {
+  margin-top: 0;
+}
+.hero-booking {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-block: 0.75rem;
+  color: var(--accent);
+  font-size: 0.8rem;
+}
+.hero-booking .arrow {
+  width: 1rem;
+  height: 1rem;
+}
+.hero-booking:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.3rem;
+}
+
 .desktop-break {
   display: none;
 }
@@ -311,7 +401,7 @@ a:hover .arrow {
 .round-arrow {
   width: 2.6rem;
   height: 2.6rem;
-  border: 1px solid var(--ink);
+  border: 1px solid var(--outline);
   border-radius: 50%;
   display: grid;
   place-items: center;
@@ -335,7 +425,7 @@ a:hover .arrow {
   position: absolute;
   width: 73%;
   height: 17rem;
-  border: 1px solid var(--ink);
+  border: 1px solid var(--outline);
   border-radius: 0.4rem;
   padding: 1.35rem;
   box-shadow: 0.25rem 0.5rem 1rem var(--shadow);
@@ -344,22 +434,22 @@ a:hover .arrow {
   left: 20%;
   top: 2rem;
   transform: rotate(9deg);
-  background: var(--ink);
-  color: var(--paper);
+  background: var(--blue);
+  color: var(--ink);
   z-index: 1;
 }
 .sheet-intelligence {
   left: 13%;
   top: 3.5rem;
   transform: rotate(-5deg);
-  background: var(--lilac);
+  background: var(--teal);
   z-index: 2;
 }
 .sheet-experience {
   left: 6%;
   top: 5rem;
   transform: rotate(-13deg);
-  background: var(--paper);
+  background: var(--surface);
   z-index: 3;
 }
 .stack-sheet b {
@@ -442,7 +532,7 @@ a:hover .arrow {
   right: 0;
   bottom: 1rem;
   background: var(--accent);
-  color: var(--white);
+  color: var(--on-accent);
   border-radius: 50%;
   width: 6.5rem;
   height: 6.5rem;
@@ -572,19 +662,19 @@ a:hover .arrow {
 }
 .project-panel {
   display: grid;
-  border: 1px solid var(--ink);
+  border: 1px solid var(--outline);
   border-radius: 1rem;
   overflow: hidden;
   background: var(--panel);
   color: var(--panel-ink, var(--ink));
   min-width: 0;
 }
-.theme-lilac {
-  --panel: var(--lilac);
+.theme-teal {
+  --panel: var(--teal);
 }
 .theme-ink {
-  --panel: var(--ink);
-  --panel-ink: var(--paper);
+  --panel: var(--surface);
+  --panel-ink: var(--ink);
 }
 .theme-sage {
   --panel: var(--sage);
@@ -607,7 +697,7 @@ a:hover .arrow {
   width: 100%;
   gap: 1rem;
   font-size: 0.5rem;
-  border-bottom: 1px solid currentColor;
+  border-bottom: 1px solid color-mix(in srgb, currentColor 25%, transparent);
   padding-bottom: 1rem;
 }
 .project-company {
@@ -676,7 +766,7 @@ a:hover .arrow {
   gap: 0.6rem;
 }
 .host-row span {
-  border: 1px solid var(--ink);
+  border: 1px solid var(--outline);
   border-radius: 0.35rem;
   background: var(--paper);
   padding: 0.65rem 0.35rem;
@@ -696,14 +786,15 @@ a:hover .arrow {
   display: flex;
   gap: 1rem;
   align-items: center;
-  background: var(--ink);
-  color: var(--paper);
+  background: var(--surface-raised);
+  color: var(--ink);
+  border: 1px solid var(--outline);
   padding: 1rem 1.5rem;
   border-radius: 0.5rem;
 }
 .core-star {
   font-size: 2.3rem;
-  color: var(--lilac);
+  color: var(--teal-highlight);
 }
 .agent-core small {
   font-family: var(--mono);
@@ -722,7 +813,7 @@ a:hover .arrow {
   display: grid;
   gap: 0.5rem;
   padding: 1rem;
-  border: 1px solid var(--ink);
+  border: 1px solid var(--outline);
   border-radius: 0.35rem;
   background: var(--paper);
   font-size: 0.65rem;
@@ -752,7 +843,7 @@ a:hover .arrow {
 .perf-number > span {
   font-size: 2.5rem;
   letter-spacing: -0.08em;
-  color: var(--line);
+  color: var(--muted);
   text-decoration: line-through;
   text-decoration-thickness: 1px;
 }
@@ -765,7 +856,7 @@ a:hover .arrow {
   font-size: 4.5rem;
   letter-spacing: -0.08em;
   font-weight: 500;
-  color: var(--sage);
+  color: var(--green);
 }
 .perf-number em {
   font-size: 1.4rem;
@@ -801,7 +892,7 @@ a:hover .arrow {
   width: 100%;
 }
 .bar-after {
-  background: var(--sage);
+  background: var(--green);
   width: 1%;
   min-width: 2px;
 }
@@ -828,7 +919,7 @@ a:hover .arrow {
   width: 86%;
   height: 14rem;
   position: absolute;
-  border: 1px solid var(--ink);
+  border: 1px solid var(--outline);
   background: var(--paper);
   border-radius: 0.2rem;
   padding: 1.25rem;
@@ -888,7 +979,7 @@ a:hover .arrow {
   font-style: normal;
 }
 .ledger {
-  border: 1px solid var(--ink);
+  border: 1px solid var(--outline);
   border-radius: 0.4rem;
   background: var(--paper);
   margin-top: 2.5rem;
@@ -916,7 +1007,7 @@ a:hover .arrow {
   font-family: var(--mono);
   font-size: 0.5rem;
   background: var(--paper-deep);
-  border-bottom: 1px solid var(--ink);
+  border-bottom: 1px solid var(--outline);
 }
 .ledger-header b {
   font-size: 1.25rem;
@@ -958,7 +1049,7 @@ a:hover .arrow {
   top: 0.4rem;
 }
 .code-window {
-  border: 1px solid var(--ink);
+  border: 1px solid var(--outline);
   background: var(--paper);
   border-radius: 0.4rem;
   margin-top: 2.5rem;
@@ -972,7 +1063,7 @@ a:hover .arrow {
   gap: 0.25rem;
   background: var(--paper-deep);
   padding: 0.9rem 0.75rem;
-  border-bottom: 1px solid var(--ink);
+  border-bottom: 1px solid var(--outline);
 }
 .code-title i {
   width: 0.3rem;
@@ -1020,7 +1111,7 @@ a:hover .arrow {
   justify-content: space-between;
   font-family: var(--mono);
   font-size: 0.55rem;
-  border-bottom: 1px solid var(--ink);
+  border-bottom: 1px solid var(--outline);
   padding: 1.25rem 0;
 }
 .practice {
@@ -1213,7 +1304,7 @@ a:hover .arrow {
   position: relative;
 }
 .easygen-link {
-  background: var(--lilac);
+  background: var(--teal);
 }
 .confidential-project {
   background: var(--paper-deep);
@@ -1244,8 +1335,9 @@ a:hover .arrow {
 }
 .site-footer {
   padding: 2.5rem var(--gutter) 1.5rem;
-  background: var(--ink);
-  color: var(--paper);
+  background: var(--paper-deep);
+  color: var(--ink);
+  border-top: 1px solid var(--line);
   overflow: hidden;
 }
 .footer-top {
@@ -1269,7 +1361,7 @@ a:hover .arrow {
   letter-spacing: -0.07em;
 }
 .footer-headline em {
-  color: var(--peach);
+  color: var(--accent);
 }
 .footer-headline .arrow {
   width: 3rem;
@@ -1295,7 +1387,7 @@ a:hover .arrow {
   font-family: var(--mono);
   font-size: 0.55rem;
   padding: 0.75rem 0;
-  color: var(--line);
+  color: var(--muted);
 }
 .copy-email span {
   margin-left: 0.5rem;
@@ -1306,12 +1398,12 @@ a:hover .arrow {
   flex-wrap: wrap;
   gap: 1.5rem;
   align-items: center;
-  border-top: 1px solid var(--muted);
+  border-top: 1px solid var(--line);
   padding-top: 1.5rem;
   max-width: var(--content);
   margin: 3rem auto 0;
   font-size: 0.6rem;
-  color: var(--line);
+  color: var(--muted);
 }
 .footer-bottom > div {
   display: flex;
@@ -1331,11 +1423,11 @@ a:hover .arrow {
   content: '';
   width: 0.35rem;
   height: 0.35rem;
-  background: var(--sage);
+  background: var(--green);
   border-radius: 50%;
 }
 .motion-toggle[aria-pressed='true']::before {
-  background: var(--peach);
+  background: var(--accent);
 }
 .toast {
   position: fixed;
@@ -1347,8 +1439,8 @@ a:hover .arrow {
     opacity 0.2s,
     transform 0.2s;
   padding: 0.8rem 1.25rem;
-  background: var(--ink);
-  color: var(--paper);
+  background: var(--surface-raised);
+  color: var(--ink);
   border: 1px solid var(--line);
   border-radius: 4rem;
   z-index: 50;
@@ -1504,7 +1596,7 @@ a:hover .arrow {
   font-size: 0.75rem;
 }
 .pill-button {
-  border: 1px solid var(--ink);
+  border: 1px solid var(--outline);
   border-radius: 4rem;
   padding: 0.8rem 1rem;
   font-size: 0.65rem;
@@ -2378,10 +2470,20 @@ html.reduce-motion {
     size: A4;
     margin: 14mm;
   }
+  :root {
+    color-scheme: light;
+    --paper: #ffffff;
+    --paper-deep: #eeedec;
+    --ink: #212121;
+    --muted: #656363;
+    --line: #d9d9d9;
+    --outline: #cccccc;
+    --accent: #b8381e;
+  }
   html,
   body {
-    background: white;
-    color: black;
+    background: var(--paper);
+    color: var(--ink);
     font-size: 10pt;
   }
   body::before,

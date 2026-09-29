@@ -25,7 +25,7 @@ export const projects: Project[] = [
     company: 'Notch',
     category: 'AI product engineering',
     period: '2026',
-    theme: 'lilac',
+    theme: 'teal',
     visual: 'agents',
     description:
       'Taking a creative agent beyond its own chat window, with useful progress, the right context and a reliable way back.',
