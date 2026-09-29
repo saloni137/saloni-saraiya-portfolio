@@ -1,0 +1,204 @@
+---
+import type { Project } from '../data/projects';
+interface Props {
+  kind: Project['visual'];
+}
+const { kind } = Astro.props;
+---
+
+<div class:list={['diagram', `diagram-${kind}`]} aria-hidden="true">
+  {kind === 'agents' && (
+    <>
+      <div class="diagram-label">
+        <span>INTERFACE / 01</span>
+        <span>CONNECTED</span>
+      </div>
+      <div class="host-row">
+        <span>Claude</span>
+        <span>ChatGPT</span>
+        <span>Slack</span>
+      </div>
+      <svg class="connector-lines" viewBox="0 0 400 85" fill="none">
+        <path d="M65 0v30Q65 45 80 45h105q15 0 15 15v25M200 0v85M335 0v30q0 15-15 15H215q-15 0-15 15" />
+      </svg>
+      <div class="agent-core">
+        <span class="core-star">✳</span>
+        <div>
+          <small>ONE WORKSPACE</small>
+          <strong>
+            Context travels
+            <br />
+            with the work.
+          </strong>
+        </div>
+      </div>
+      <div class="agent-log">
+        <span>
+          <i></i> Plan understood
+        </span>
+        <span>
+          <i></i> Creative in progress
+        </span>
+        <span>
+          <i></i> Ready for review <b>↗</b>
+        </span>
+      </div>
+    </>
+  )}
+  {kind === 'performance' && (
+    <>
+      <div class="diagram-label">
+        <span>PERFORMANCE / 02</span>
+        <span>MEASURED</span>
+      </div>
+      <div class="perf-number">
+        <span>268</span>
+        <small>to</small>
+        <strong>
+          2.4<em>ms</em>
+        </strong>
+      </div>
+      <div class="perf-chart">
+        <div class="chart-row">
+          <small>BEFORE</small>
+          <div class="bar-track">
+            <i class="bar-before"></i>
+          </div>
+          <span>268</span>
+        </div>
+        <div class="chart-row">
+          <small>AFTER</small>
+          <div class="bar-track">
+            <i class="bar-after"></i>
+          </div>
+          <span>2.4</span>
+        </div>
+      </div>
+      <div class="perf-caption">
+        Less repeated work.
+        <br />
+        More room to think.
+      </div>
+      <small class="diagram-footnote">TIMELINE DERIVATION · 3,150-ITEM BENCHMARK</small>
+    </>
+  )}
+  {kind === 'memory' && (
+    <>
+      <div class="diagram-label">
+        <span>KNOWLEDGE / 03</span>
+        <span>TRACEABLE</span>
+      </div>
+      <div class="memory-stack">
+        <div class="memory-paper paper-back">
+          <small>BRAND / CONTEXT</small>
+          <div class="fake-lines"></div>
+        </div>
+        <div class="memory-paper paper-front">
+          <span class="paper-mark">↳</span>
+          <small>WHAT WE KNOW</small>
+          <h4>
+            A little context.
+            <br />A lasting memory.
+          </h4>
+          <div class="paper-rule"></div>
+          <div class="memory-fact">
+            <span>Brand voice</span>
+            <b>Warm & direct</b>
+          </div>
+          <div class="memory-fact">
+            <span>Source</span>
+            <b>Brand brief ↗</b>
+          </div>
+        </div>
+      </div>
+      <div class="memory-flow">
+        <span>Read</span>
+        <i>→</i>
+        <span>Understand</span>
+        <i>→</i>
+        <span>Remember</span>
+      </div>
+    </>
+  )}
+  {kind === 'billing' && (
+    <>
+      <div class="diagram-label">
+        <span>SYSTEMS / 04</span>
+        <span>RECONCILED</span>
+      </div>
+      <div class="ledger">
+        <div class="ledger-header">
+          <span>THE STATE OF THINGS</span>
+          <b>≋</b>
+        </div>
+        <div>
+          <span>Payment</span>
+          <b>
+            Confirmed <i>✓</i>
+          </b>
+        </div>
+        <div>
+          <span>Entitlement</span>
+          <b>
+            Granted <i>✓</i>
+          </b>
+        </div>
+        <div>
+          <span>Agent access</span>
+          <b>
+            Active <i>✓</i>
+          </b>
+        </div>
+        <div class="ledger-total">
+          <span>Every promise.</span>
+          <strong>Accounted for.</strong>
+        </div>
+      </div>
+      <div class="ledger-stamp">
+        SAFE TO
+        <br />
+        <strong>RETRY</strong>
+        <span>↻</span>
+      </div>
+    </>
+  )}
+  {kind === 'retrieval' && (
+    <>
+      <div class="diagram-label">
+        <span>DEVELOPER TOOLS / 05</span>
+        <span>IN CONTEXT</span>
+      </div>
+      <div class="code-window">
+        <div class="code-title">
+          <i></i>
+          <i></i>
+          <i></i>
+          <span>your-project / context</span>
+        </div>
+        <div class="code-content">
+          <p>
+            <span>01</span>
+            <em>const</em> context = &#123;
+          </p>
+          <p>
+            <span>02</span>&nbsp; patterns: <b>"your own"</b>,
+          </p>
+          <p>
+            <span>03</span>&nbsp; source: <b>"your code"</b>,
+          </p>
+          <p>
+            <span>04</span>&nbsp; suggestion: <b>"a better fit"</b>
+          </p>
+          <p>
+            <span>05</span>&#125;;<i class="code-caret"></i>
+          </p>
+        </div>
+      </div>
+      <div class="retrieval-route">
+        <span>Find</span>
+        <span>Connect</span>
+        <span>Generate ↗</span>
+      </div>
+    </>
+  )}
+</div>

@@ -1,0 +1,41 @@
+---
+import Arrow from './Arrow.astro';
+import { profile } from '../data/profile';
+---
+
+<footer id="contact" class="site-footer">
+  <div class="footer-top">
+    <span class="eyebrow">Have a good problem?</span>
+    <span class="eyebrow">Ottawa, Canada ↗ Anywhere</span>
+  </div>
+  <a class="footer-headline" href={`mailto:${profile.email}`}>
+    <span>
+      Let’s make
+      <br />
+      it <em>work.</em>
+    </span>
+    <Arrow diagonal />
+  </a>
+  <div class="footer-contact">
+    <a href={`mailto:${profile.email}`}>{profile.email}</a>
+    <button class="copy-email" data-email={profile.email} aria-label="Copy email address">
+      Copy email <span aria-hidden="true">⧉</span>
+    </button>
+  </div>
+  <div class="footer-bottom">
+    <span>© {new Date().getUTCFullYear()} Saloni Saraiya</span>
+    <div>
+      <a href={profile.linkedin} target="_blank" rel="noopener noreferrer">
+        LinkedIn ↗
+      </a>
+      <a href={profile.github} target="_blank" rel="noopener noreferrer">
+        GitHub ↗
+      </a>
+      <a href="/resume/">Résumé ↗</a>
+    </div>
+    <button class="motion-toggle" aria-pressed="false">
+      Reduce motion
+    </button>
+  </div>
+</footer>
+<div class="toast" role="status" aria-live="polite" id="site-status"></div>

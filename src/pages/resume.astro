@@ -1,0 +1,105 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { profile, experience, skills } from '../data/profile';
+---
+
+<Layout
+  title="Résumé — Saloni Saraiya"
+  description="Experience, skills and education for Saloni Saraiya, full-stack and AI engineer in Ottawa."
+>
+  <article class="resume-page wrap">
+    <div class="resume-toolbar">
+      <a href="/">← Back to portfolio</a>
+      <button id="print-resume" class="pill-button">
+        Print / Save PDF ↗
+      </button>
+    </div>
+    <header class="resume-header">
+      <span class="eyebrow">THE LONGER VERSION</span>
+      <h1>
+        Saloni Saraiya
+        <span>
+          Full-stack engineer.
+          <br />
+          <em>AI & agentic systems.</em>
+        </span>
+      </h1>
+      <p>
+        {profile.location} · <a href={`mailto:${profile.email}`}>{profile.email}</a>
+      </p>
+      <div>
+        <a href={profile.linkedin}>LinkedIn ↗</a>
+        <a href={profile.github}>GitHub ↗</a>
+      </div>
+    </header>
+    <section class="resume-section">
+      <h2>Profile</h2>
+      <p>
+        Full-stack engineer building production applications since 2020, with a focus on applied AI
+        since 2023. Founding engineer at Notch, working across agentic creative workflows, the
+        product experience and the systems behind them. Previously built WiseGPT and code-context
+        retrieval pipelines at DhiWise.
+      </p>
+    </section>
+    <section class="resume-section">
+      <h2>Experience</h2>
+      {experience.map((job) => (
+        <article class="resume-job">
+          <div>
+            <h3>{job.role}</h3>
+            <span>{job.dates}</span>
+          </div>
+          <p class="resume-company">
+            {job.company} · {job.place}
+          </p>
+          <ul>
+            {job.details.map((detail) => (
+              <li>{detail}</li>
+            ))}
+          </ul>
+          {job.company === 'Agentic Studio' && (
+            <p class="resume-project">
+              Selected project:{' '}
+              <a href="https://easygen.io/" target="_blank" rel="noopener noreferrer">
+                EasyGen ↗
+              </a>
+              , a LinkedIn writing product.
+            </p>
+          )}
+        </article>
+      ))}
+    </section>
+    <section class="resume-section">
+      <h2>Selected freelance work</h2>
+      <p>
+        Developer tooling for a confidential client, spanning editor interfaces, AI-assisted code
+        workflows and version-control integration. Client identity and implementation details are
+        private.
+      </p>
+    </section>
+    <section class="resume-section">
+      <h2>Skills</h2>
+      {skills.map((group) => (
+        <p>
+          <strong>{group.label}:</strong> {group.items.join(', ')}
+        </p>
+      ))}
+    </section>
+    <section class="resume-section">
+      <h2>Education</h2>
+      <div class="education-row">
+        <h3>MSc, Information Technology</h3>
+        <span>2019–2021</span>
+        <p>Veer Narmad South Gujarat University · Surat, India</p>
+      </div>
+      <div class="education-row">
+        <h3>BSc, Information Technology</h3>
+        <span>2016–2019</span>
+        <p>Veer Narmad South Gujarat University · Surat, India</p>
+      </div>
+    </section>
+  </article>
+  <script>
+    document.getElementById('print-resume')?.addEventListener('click', () => window.print());
+  </script>
+</Layout>

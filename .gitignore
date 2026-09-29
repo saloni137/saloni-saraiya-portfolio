@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.astro/
+.vercel/
+.env
+.env.*
+!.env.example
+.DS_Store
+playwright-report/
+test-results/
+*.log
+
+# Personal source material belongs outside this public repository.
+research/
+source-material/

@@ -1,0 +1,23 @@
+---
+import Arrow from './Arrow.astro';
+const isHome = Astro.url.pathname === '/';
+---
+
+<header class="site-header">
+  <a class="wordmark" href="/" aria-label="Saloni Saraiya, home">
+    saloni
+    <span class="wordmark-star" aria-hidden="true">
+      ✳
+    </span>
+  </a>
+  <nav aria-label="Main navigation">
+    <a href={isHome ? '#work' : '/#work'}>Work</a>
+    <a href={isHome ? '#about' : '/#about'}>About</a>
+    <a href="/resume/" class="resume-link">
+      Résumé <Arrow diagonal />
+    </a>
+  </nav>
+  <a class="header-contact" href={isHome ? '#contact' : '/#contact'}>
+    Let’s talk <span aria-hidden="true">↗</span>
+  </a>
+</header>

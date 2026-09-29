@@ -1,0 +1,90 @@
+---
+import type { GetStaticPaths, InferGetStaticPropsType } from 'astro';
+import Layout from '../../layouts/Layout.astro';
+import Diagram from '../../components/Diagram.astro';
+import Arrow from '../../components/Arrow.astro';
+import { projects } from '../../data/projects';
+export const getStaticPaths = (() =>
+  projects.map((project, index) => ({
+    params: { slug: project.slug },
+    props: { project, next: projects[(index + 1) % projects.length] },
+  }))) satisfies GetStaticPaths;
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+const { project, next } = Astro.props;
+---
+
+<Layout title={`${project.title} — Saloni Saraiya`} description={project.description}>
+  <article>
+    <header class="case-header wrap">
+      <a class="back-link" href="/#work">
+        ← Selected work
+      </a>
+      <div class="section-label">
+        <span>
+          CASE {project.number} / {project.company}
+        </span>
+        <span>{project.period}</span>
+      </div>
+      <h1>{project.title}</h1>
+      <p class="case-deck">{project.description}</p>
+      <div class="case-meta">
+        <div>
+          <span class="eyebrow">MY CONTRIBUTION</span>
+          <p>{project.contribution}</p>
+        </div>
+        <div>
+          <span class="eyebrow">WORKING WITH</span>
+          <p>{project.tags.join(' / ')}</p>
+        </div>
+      </div>
+    </header>
+    <div class:list={['case-visual', `theme-${project.theme}`]}>
+      <Diagram kind={project.visual} />
+      <span class="visual-disclaimer">CONCEPTUAL ILLUSTRATION · NOT A PRODUCT SCREENSHOT</span>
+    </div>
+    <div class="case-body wrap">
+      {project.sections.map((section, index) => (
+        <section class="case-section">
+          <div class="case-section-label">
+            <span class="eyebrow">
+              0{index + 1} / {section.label}
+            </span>
+          </div>
+          <div>
+            <h2>{section.title}</h2>
+            {section.paragraphs.map((p) => (
+              <p>{p}</p>
+            ))}
+          </div>
+        </section>
+      ))}
+      <section class="case-section outcomes">
+        <div>
+          <span class="eyebrow">04 / WHAT CHANGED</span>
+        </div>
+        <div>
+          <h2>The outcome.</h2>
+          <ul>
+            {project.outcomes.map((o) => (
+              <li>
+                <span aria-hidden="true">↗</span>
+                {o}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+      <blockquote class="case-takeaway">
+        <span class="eyebrow">THE IDEA I’D TAKE TO THE NEXT PROJECT</span>
+        <p>{project.takeaway}</p>
+      </blockquote>
+    </div>
+  </article>
+  <a class="next-case wrap" href={`/work/${next.slug}/`}>
+    <div>
+      <span class="eyebrow">UP NEXT / {next.number}</span>
+      <h2>{next.shortTitle}</h2>
+    </div>
+    <Arrow diagonal />
+  </a>
+</Layout>
