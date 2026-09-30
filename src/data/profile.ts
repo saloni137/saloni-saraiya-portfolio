@@ -7,7 +7,7 @@ export const profile = {
   github: 'https://github.com/saloni137',
   linkedin: 'https://www.linkedin.com/in/saloni-saraiya',
   description:
-    'Saloni Saraiya is a full-stack and AI engineer in Ottawa, building thoughtful interfaces, agentic workflows and the reliable systems behind them.',
+    'Saloni Saraiya is a full-stack and AI engineer in Ottawa, open to senior full-stack roles with hybrid work. Building thoughtful interfaces, agentic workflows and reliable systems.',
 };
 
 export const experience = [

@@ -8,6 +8,8 @@ export const GET: APIRoute = ({ site }) => {
 
 > ${profile.description}
 
+Contact: ${profile.email} or ${profile.linkedin}.
+
 Saloni has worked in software engineering since 2020 and in applied AI since 2023. Her work spans product interfaces, backend services, AI workflows and production reliability.
 
 Experience:

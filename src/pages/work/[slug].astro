@@ -72,6 +72,7 @@ const { project, next } = Astro.props;
               </li>
             ))}
           </ul>
+          {project.evidenceNote && <p class="case-evidence">{project.evidenceNote}</p>}
         </div>
       </section>
       <blockquote class="case-takeaway">

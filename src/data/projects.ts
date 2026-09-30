@@ -14,6 +14,7 @@ export interface Project {
   takeaway: string;
   sections: { label: string; title: string; paragraphs: string[] }[];
   outcomes: string[];
+  evidenceNote?: string;
 }
 
 export const projects: Project[] = [
@@ -28,7 +29,7 @@ export const projects: Project[] = [
     theme: 'slate',
     visual: 'agents',
     description:
-      'Taking a creative agent beyond its own chat window, with useful progress, the right context and a reliable way back.',
+      'Bringing a creative agent into MCP hosts and Slack. In August 2026, MCP-origin sessions produced 1,326 completed ads.',
     contribution:
       'Full-stack implementation across agent tools, external-host interfaces, identity and asynchronous status delivery.',
     tags: ['MCP', 'Slack', 'TypeScript', 'Agent workflows'],
@@ -62,10 +63,12 @@ export const projects: Project[] = [
       },
     ],
     outcomes: [
-      'Delivered integrated agent experiences across MCP hosts and Slack.',
-      'Made progress, workspace selection and blocked states actionable.',
-      'Preserved thread identity when multiple tasks arrived together.',
+      'The MCP integration I contributed to supported 1,326 completed ads in August 2026: 1,189 static ads and 137 video ads.',
+      'Result cards followed generation progress and surfaced workspace selection, credit blocks and recovery actions inside the host.',
+      'Concurrent Slack requests retained separate thread identities; failed handoffs did not leave a conversation attached to a session that never started.',
     ],
+    evidenceNote:
+      'Evidence: internal production usage analysis for August 2026, attributing completed ads to MCP-origin sessions. The count excludes repeat render versions and describes usage of a product built by a team.',
   },
   {
     slug: 'a-conversation-that-keeps-up',
@@ -78,7 +81,7 @@ export const projects: Project[] = [
     theme: 'ink',
     visual: 'performance',
     description:
-      'Untangling rendering, derived state and history delivery when a media-rich conversation outgrew the browser.',
+      'Reduced cold timeline-row derivation from 268 ms to 2.4 ms on a 3,150-item benchmark, alongside rendering and history-loading fixes.',
     contribution:
       'Investigation and implementation across React rendering, timeline derivation and paginated history delivery.',
     tags: ['React', 'Virtualization', 'Profiling', 'WebSockets'],
@@ -112,10 +115,12 @@ export const projects: Project[] = [
       },
     ],
     outcomes: [
-      'Reduced measured timeline-row derivation from 268 ms to 2.4 ms.',
-      'Restored usability in a staging reproduction of the affected conversation.',
-      'Bound media and rendering work while preserving access to history.',
+      'Reduced cold timeline-row derivation from 268 ms to 2.4 ms on the same 3,150-item benchmark.',
+      'The original branch froze on a staging clone of the affected conversation; the changed branch remained usable with the same messages and media.',
+      'Collapsed activity stopped mounting media, the timeline rendered a bounded window, and older history loaded incrementally.',
     ],
+    evidenceNote:
+      'Evidence: before-and-after function timings and a staging reproduction recorded during implementation. The timing measures timeline-row derivation, not overall page-load time or production-wide latency.',
   },
   {
     slug: 'memory-with-a-paper-trail',
@@ -128,7 +133,7 @@ export const projects: Project[] = [
     theme: 'graphite',
     visual: 'memory',
     description:
-      'Turning uploaded documents and scattered brand facts into knowledge people can understand, inspect and control.',
+      'Built document-to-memory workflows supporting eight upload formats and files up to 50 MB, with visible processing and explicit saves.',
     contribution:
       'Document ingestion, explicit memory writes, persistent import feedback and referenced brand-knowledge interfaces.',
     tags: ['Agent memory', 'Async jobs', 'Provenance', 'Full-stack'],
@@ -161,10 +166,12 @@ export const projects: Project[] = [
       },
     ],
     outcomes: [
-      'Made document processing and its memory changes inspectable.',
-      'Separated temporary context from persistent knowledge.',
-      'Connected generated summaries to their underlying records.',
+      'Added support for eight upload formats—PDF, DOCX, RTF, TXT, Markdown, CSV, JSON and ZIP—with a 50 MB upload limit.',
+      'Imports reported created, updated, skipped and failed documents, including individual files within an archive; failures remained visible for retry.',
+      'Reading a document kept it in temporary context until an explicit save. Generated summaries linked back to the underlying knowledge records.',
     ],
+    evidenceNote:
+      'Evidence: the shipped upload contract and import workflow. The format count and size limit describe supported capability; adoption and time saved were not measured in this case study.',
   },
   {
     slug: 'money-access-and-state',
@@ -211,9 +218,9 @@ export const projects: Project[] = [
       },
     ],
     outcomes: [
-      'Enforced resource limits during concurrent requests.',
-      'Added safe-retry and recovery behavior to billing operations.',
-      'Preserved purchased-credit balances across renewal windows.',
+      'Capacity checks ran atomically with provisioning, closing the gap where concurrent requests could both pass the same limit check.',
+      'Billing retries reused idempotency keys, and later-step failures had a compensation path. Cancellation did not report success after a failed billing update.',
+      'Top-up credits used deduplicated ledger entries and remained available across monthly renewals, with an explicit spend order.',
     ],
   },
   {
@@ -260,9 +267,9 @@ export const projects: Project[] = [
       },
     ],
     outcomes: [
-      'Built a context-aware coding assistant within VS Code.',
-      'Developed retrieval and embedding infrastructure for code recommendations.',
-      'Connected editor workflows to Python and Node.js services.',
+      'Delivered code generation inside VS Code using context retrieved from the developer’s own project.',
+      'Combined full-text search and nearest-neighbor retrieval to supply relevant code to the generation workflow.',
+      'Connected the editor, retrieval pipeline and Python/Node.js services into a single code-suggestion workflow.',
     ],
   },
 ];
