@@ -14,7 +14,7 @@ export const experience = [
   {
     company: 'Notch',
     role: 'Founding Fullstack Engineer',
-    dates: 'Oct 2025 — Sep 2026',
+    dates: 'Sep 2025 — Sep 2026',
     place: 'Remote · US',
     summary: 'Worked across the product and underlying systems of an AI creative platform.',
     details: [
