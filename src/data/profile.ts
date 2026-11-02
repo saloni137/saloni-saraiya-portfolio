@@ -14,9 +14,9 @@ export const experience = [
   {
     company: 'Notch',
     role: 'Founding Fullstack Engineer',
-    dates: 'Oct 2025 — Present',
+    dates: 'Oct 2025 — Sep 2026',
     place: 'Remote · US',
-    summary: 'Building an AI creative platform from the interaction to the infrastructure.',
+    summary: 'Worked across the product and underlying systems of an AI creative platform.',
     details: [
       'Developed agent-driven image and video workflows spanning planning, generation, editing and publishing.',
       'Built brand-memory experiences, MCP and Slack integrations, and subscription and credit workflows.',
